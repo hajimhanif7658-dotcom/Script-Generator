@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand: #4f46e5; /* Indigo 600 */
+  --color-brand-light: #eef2ff; /* Indigo 50 */
+  --color-brand-dark: #4338ca; /* Indigo 700 */
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+.glass-card {
+  @apply bg-white border border-slate-200 rounded-lg p-6 shadow-sm;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-2.5 bg-brand hover:bg-brand-dark text-white font-bold text-xs uppercase tracking-widest rounded shadow-sm transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs uppercase tracking-widest rounded transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.step-indicator {
+  @apply px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors border-b-2;
+}
+
+.step-active {
+  @apply border-brand text-brand;
+}
+
+.step-inactive {
+  @apply border-transparent text-slate-400;
+}
+
+.step-completed {
+  @apply border-brand/30 text-brand/70;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-slate-100 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-brand/50 transition-colors;
+}
+
